@@ -3,7 +3,7 @@ import { CardPersona } from "../component/cardPersona";
 export const Persona = () => {
 	return (
 		<>
-			<h1>Estamos en Detalle de personajes</h1>;
+			<h1>Personajes</h1>;
 			<div className="row">
 				<CardPersona />
 				<CardPersona />
