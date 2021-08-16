@@ -11,6 +11,27 @@ export const Navbar = () => {
 						style={{ width: "120px" }}
 					/>
 				</Link>
+				<ul className="nav align-items-center">
+					<li className="nav-item">
+						<Link to="persona" className="nav-link active" aria-current="page" href="#">
+							Personajes
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link to="vehiculos">
+							<a className="nav-link" href="#">
+								Vehiculos
+							</a>
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link to="planetas">
+							<a className="nav-link" href="#">
+								Planetas
+							</a>
+						</Link>
+					</li>
+				</ul>
 				<button
 					className="navbar-toggler justify-content-between"
 					type="button"

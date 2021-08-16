@@ -1,6 +1,6 @@
 import React from "react";
 import fotosper from "../../img/persojanes.jpg";
-import fotosveh from "../../img/vehiculos.jpg";
+import fotosveh from "../../img/vehicles.jpg";
 import fotospla from "../../img/planetas.jpg";
 
 import { Link } from "react-router-dom";

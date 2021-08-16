@@ -7,3 +7,28 @@
     margin-right: 50px;
 }
 
+.card-title{
+    margin-right: 20px;
+}
+
+.row{
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: space-around;
+}
