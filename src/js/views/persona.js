@@ -10,7 +10,10 @@ export const Persona = () => {
 			<h1>Personajes</h1>;
 			<div className="row">
 				{store.people.map((persona, posicion) => {
-					return <CardPersona key={posicion} nombre={persona.name} person={url} />;
+					return <CardPersona key={posicion} nombre={persona.name} pelo={persona.hair_color} />;
+					{
+						console.log(persona);
+					}
 				})}
 			</div>
 		</>
