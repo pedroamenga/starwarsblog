@@ -1,21 +1,30 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import PropsTypes from "prop-types";
-import { Card } from "react-bootstrap";
 
-export const CardPersona = props => {
+export const Planetas = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
 				<img src="..." className="card-img-top" alt="..." />
 				<div className="card-body">
-					<h5 className="card-title">{props.nombre}</h5>
-					<p className="card-text">{props.person}</p>
+					<h5 className="card-title"></h5>
+					<p className="card-text">
+						{store.people.map((Planetas, posicion) => {
+							return (
+								<p key={posicion}>
+									{" "}
+									{planetas.uid} {planetas.name}
+								</p>
+							);
+						})}
+					</p>
 					<div className="card-buttons">
 						<a href="#" className="btn btn-primary">
 							Más Información
 						</a>
-						<button style={{ background: "darkred" }}>
+						<button>
 							<i className="far fa-heart" style={{ color: "red" }}></i>
 						</button>
 					</div>
@@ -23,9 +32,4 @@ export const CardPersona = props => {
 			</div>
 		</>
 	);
-};
-
-CardPersona.propTypes = {
-	nombre: PropsTypes.string,
-	person: PropsTypes.string
 };

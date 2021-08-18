@@ -11,7 +11,7 @@ export const Navbar = () => {
 						style={{ width: "120px" }}
 					/>
 				</Link>
-				<ul className="nav align-items-center">
+				<ul className="nav">
 					<li className="nav-item">
 						<Link to="persona" className="nav-link active" aria-current="page" href="#">
 							Personajes
@@ -55,31 +55,6 @@ export const Navbar = () => {
 									aria-expanded="false">
 									<i className="far fa-heart" />
 								</button>
-								<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-									<li>
-										<a className="dropdown-item active" href="#">
-											Action
-										</a>
-									</li>
-									<li>
-										<a className="dropdown-item" href="#">
-											Another action
-										</a>
-									</li>
-									<li>
-										<a className="dropdown-item" href="#">
-											Something else here
-										</a>
-									</li>
-									<li>
-										<hr className="dropdown-divider" />
-									</li>
-									<li>
-										<a className="dropdown-item" href="#">
-											Separated link
-										</a>
-									</li>
-								</ul>
 							</div>
 						</li>
 					</ul>

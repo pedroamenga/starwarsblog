@@ -29,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
                 */
 				const store = getStore();
-				fetch("https://swapi.dev/api/people/?page=1")
+				fetch("https://swapi.dev/api/people/?page=2")
 					.then(response => response.json())
 					.then(result => {
 						setStore({ people: result.results });
