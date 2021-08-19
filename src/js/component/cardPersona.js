@@ -8,10 +8,13 @@ export const CardPersona = props => {
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
-				<img src="..." className="card-img-top" alt="..." />
+				<img
+					src="https://www.pngkey.com/png/detail/0-6181_file-tsf-logo-png-star-wars-jedi-order.png"
+					className="card-img-top"
+					alt="..."
+				/>
 				<div className="card-body">
-					<h5 className="card-title">{props.nombre}</h5>
-					<p className="card-text">{props.person} </p>
+					<h5 className="card-title">{props.obj.name}</h5>
 					<p>{props.hair_color} </p>
 					<div className="card-buttons">
 						<a href="#" className="btn btn-primary">
@@ -28,7 +31,9 @@ export const CardPersona = props => {
 };
 
 CardPersona.propTypes = {
-	nombre: PropsTypes.string,
+	name: PropsTypes.string,
 	person: PropsTypes.string,
-	hair_color: propTypes.string
+	hair_color: propTypes.string,
+	eye_color: propTypes.string,
+	obj: propTypes.string
 };

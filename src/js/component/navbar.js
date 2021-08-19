@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg navbar-light bg-dark">
+			<nav className="navbar container-fluid navbar-light bg-dark">
 				<Link to="/">
 					<img
 						src="https://cdn.freebiesupply.com/logos/large/2x/star-wars-4-logo-png-transparent.png"
 						style={{ width: "120px" }}
 					/>
 				</Link>
-				<ul className="nav">
+				<ul className="nav justify-content-center">
 					<li className="nav-item">
 						<Link to="persona" className="nav-link active" aria-current="page" href="#">
 							Personajes
@@ -40,21 +40,20 @@ export const Navbar = () => {
 					aria-controls="navbarNavDropdown"
 					aria-expanded="false"
 					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon" />
+					<i className="far fa-heart" />
 				</button>
-				<div className="collapse navbar-collapse" id="navbarNavDropdown">
+				<div className="collapse navbar" id="navbarNavDropdown">
 					<ul className="navbar-nav">
 						<li className="nav-item dropdown">
 							<div className="dropdown">
 								<button
 									className="btn btn-secondary dropdown-toggle"
-									style={{ background: "darkorange" }}
+									style={{ background: "orange" }}
 									type="button"
 									id="dropdownMenuButton2"
 									data-bs-toggle="dropdown"
-									aria-expanded="false">
-									<i className="far fa-heart" />
-								</button>
+									aria-expanded="false"></button>
+								<i className="far fa-heart" />
 							</div>
 						</li>
 					</ul>

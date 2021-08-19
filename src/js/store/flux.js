@@ -16,7 +16,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
-			people: []
+			people: [],
+			planetas: [],
+			vehiculos: []
 		},
 
 		actions: {
@@ -36,7 +38,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(store.people);
 					})
 					.catch(error => console.log("error", error));
+
+				fetch("https://swapi.dev/api/planets/")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ planetas: result.results });
+						console.log(store.planetas);
+					})
+					.catch(error => console.log("error", error));
 			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

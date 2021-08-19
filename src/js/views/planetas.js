@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import { CardPersona } from "../component/cardPersona";
+import { Planetas } from "../component/planetas";
 import { Context } from "../store/appContext";
+import PropsTypes from "prop-types";
 
-export const Persona = () => {
+export const Planetas = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<>
-			<h1>Personajes</h1>;
+			<h1>Planetas</h1>;
 			<div className="row">
-				{store.people.map((persona, posicion) => {
-
-					//return <CardPersona key={posicion} nombre={persona.name} />;
+				{store.planetas.map((planetas, posicion) => {
+					return <Planetas objt={planetas} key={posicion} />;
 				})}
 			</div>
 		</>

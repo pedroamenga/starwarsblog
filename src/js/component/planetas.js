@@ -1,25 +1,21 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { PropsTypes } from "prop-types";
+import { Card } from "react-bootstrap";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-export const Planetas = () => {
-	const { store, actions } = useContext(Context);
-
+export const Planetas = props => {
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
-				<img src="..." className="card-img-top" alt="..." />
+				<img
+					src="https://www.logolynx.com/images/logolynx/f6/f6ebb69498fff47086479cda23104608.png"
+					className="card-img-top"
+					alt="..."
+				/>
 				<div className="card-body">
-					<h5 className="card-title"></h5>
-					<p className="card-text">
-						{store.people.map((Planetas, posicion) => {
-							return (
-								<p key={posicion}>
-									{" "}
-									{planetas.uid} {planetas.name}
-								</p>
-							);
-						})}
-					</p>
+					<h5 className="card-title">{props.objt.name}</h5>
+					<p className="card-text"></p>
 					<div className="card-buttons">
 						<a href="#" className="btn btn-primary">
 							Más Información
@@ -32,4 +28,10 @@ export const Planetas = () => {
 			</div>
 		</>
 	);
+};
+
+Planetas.propTypes = {
+	name: PropsTypes.string,
+	objt: PropsTypes.string,
+	planetas: PropsTypes.string
 };
