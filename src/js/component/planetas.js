@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { PropsTypes } from "prop-types";
-import { Card } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 
 export const Planetas = props => {
@@ -14,7 +13,7 @@ export const Planetas = props => {
 					alt="..."
 				/>
 				<div className="card-body">
-					<h5 className="card-title">{props.objt.name}</h5>
+					<h5 className="card-title">{props.objt}</h5>
 					<p className="card-text"></p>
 					<div className="card-buttons">
 						<a href="#" className="btn btn-primary">
@@ -31,7 +30,7 @@ export const Planetas = props => {
 };
 
 Planetas.propTypes = {
-	name: PropsTypes.string,
-	objt: PropsTypes.string,
-	planetas: PropsTypes.string
+	name: propTypes.string,
+	objt: propTypes.string,
+	planetas: propTypes.string
 };

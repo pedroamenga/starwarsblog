@@ -3,22 +3,12 @@ import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
-
+			favoritos: [],
 			people: [],
 			planetas: [],
-			vehiculos: []
+			vehiculos: [],
+			character: {},
+			planet: {}
 		},
 
 		actions: {
@@ -26,26 +16,51 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-                */
+
+			getCharacter: uid => {
 				const store = getStore();
-				fetch("https://swapi.dev/api/people/?page=2")
+				fetch("https://www.swapi.tech/api/people/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ character: result.result.properties });
+					})
+					.catch(error => console.log("error", error));
+			},
+
+			getPeople: () => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/people")
 					.then(response => response.json())
 					.then(result => {
 						setStore({ people: result.results });
-						console.log(store.people);
 					})
 					.catch(error => console.log("error", error));
+			},
 
-				fetch("https://swapi.dev/api/planets/")
+			planet: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/planets/" + uid)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ planetas: result.results });
-						console.log(store.planetas);
+						setStore({ planetas: result.result.properties });
 					})
 					.catch(error => console.log("error", error));
+			},
+
+			getPlanet: () => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/planets")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ planet: result.results });
+					})
+					.catch(error => console.log("error", error));
+			},
+			addFavoritos: name => {
+				const store = getStore();
+				setStore({
+					favoritos: [...store.favoritos, name]
+				});
 			},
 
 			changeColor: (index, color) => {
