@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import PropsTypes from "prop-types";
+import { PropsTypes } from "prop-types";
 import { Card } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 
 export const CardVehiculos = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
-				<img
-					src="https://c0.klipartz.com/pngpicture/28/139/gratis-png-star-wars-wars-halcon-ilustracion-yoda-millennium-falcon-star-wars-iconos-de-computadora-estrella-de-la-muerte.png"
-					className="card-img-top"
-					alt="..."
-				/>
+				<img src="" className="card-img-top" alt="..." />
 				<div className="card-body">
-					<h5 className="card-title">{props.obj.name}</h5>
-					<p>{props.hair_color} </p>
+					<h5 className="card-title"></h5>
 					<div className="card-buttons">
 						<a href="#" className="btn btn-primary">
 							Más Información
@@ -28,12 +24,4 @@ export const CardVehiculos = props => {
 			</div>
 		</>
 	);
-};
-
-CardPersona.propTypes = {
-	name: PropsTypes.string,
-	person: PropsTypes.string,
-	hair_color: propTypes.string,
-	eye_color: propTypes.string,
-	obj: propTypes.string
 };

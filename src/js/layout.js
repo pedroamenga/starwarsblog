@@ -3,14 +3,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Planetas } from "./component/planetas";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Vehiculos } from "./views/vehiculos";
 import { Persona } from "./views/persona";
-import { Carusel } from "./component/carusel";
 
 //create your first component
 const Layout = () => {
@@ -33,8 +32,8 @@ const Layout = () => {
 						<Route exact path="/planetas">
 							<Planetas />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
+						<Route exact path="/vehiculos">
+							<Vehiculos />
 						</Route>
 					</Switch>
 					<Footer />

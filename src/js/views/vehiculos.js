@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Planetas } from "../component/planetas";
+import { cardvehiculos } from "../component/cardvehiculos";
 import { Context } from "../store/appContext";
 
 export const Vehiculos = () => {
@@ -9,8 +9,8 @@ export const Vehiculos = () => {
 		<>
 			<h1>Planetas</h1>;
 			<div className="row">
-				{store.people.map((Planetas, posicion) => {
-					return <Planetas obj={Planetas} key={posicion} />;
+				{store.people.map((cardvehiculos, posicion) => {
+					return <Vehiculos obj={cardvehiculos} key={posicion} />;
 				})}
 			</div>
 		</>

@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 
 export const CardPersona = props => {
 	const { store, actions } = useContext(Context);
+	const params = useParams();
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
