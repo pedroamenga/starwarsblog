@@ -17,7 +17,6 @@ export const CardPersona = props => {
 				/>
 				<div className="card-body">
 					<h5 className="card-title">{props.obj.name}</h5>
-					<p>{props.hair_color} </p>
 					<div className="card-buttons">
 						<Link to={"/personaje/" + props.obj.uid} href="#" className="btn btn-primary">
 							Más Información

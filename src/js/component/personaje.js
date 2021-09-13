@@ -4,7 +4,7 @@ import PropsTypes from "prop-types";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { useParams } from "react-router-dom";
 
-export const CardPersona = props => {
+export const Personaje = props => {
 	const { store, actions } = useContext(Context);
     const params = useParams();
 	return (
