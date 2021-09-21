@@ -1,5 +1,3 @@
-import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
-
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {

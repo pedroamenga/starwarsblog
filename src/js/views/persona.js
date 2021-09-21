@@ -4,12 +4,8 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
 export const Persona = () => {
-	const { store, actions } = useContext(Context);
-	const { theid } = useParams();
-
-	useEffect(() => {
-		actions.getCharacter(theid);
-	});
+	const { store } = useContext(Context);
+	const params = useParams();
 
 	return (
 		<>

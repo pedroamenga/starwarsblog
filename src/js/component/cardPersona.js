@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PropsTypes from "prop-types";
 import { propTypes } from "react-bootstrap/esm/Image";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const CardPersona = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
 	return (
 		<>
 			<div className="card" style={{ width: "18rem" }}>
@@ -18,10 +17,11 @@ export const CardPersona = props => {
 				<div className="card-body">
 					<h5 className="card-title">{props.obj.name}</h5>
 					<div className="card-buttons">
-						<Link to={"/personaje/" + props.obj.uid} href="#" className="btn btn-primary">
+						<Link to={"/personaje/" + props.obj.uid} className="btn btn-primary">
 							Más Información
 						</Link>
 						<button
+							href="#"
 							style={{ background: "darkred" }}
 							onClick={() => {
 								actions.addFavoritos(props.obj.name);

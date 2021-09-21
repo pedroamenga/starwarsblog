@@ -10,6 +10,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Vehiculos } from "./views/vehiculos";
 import { Persona } from "./views/persona";
+import { Personaje } from "./views/personaje";
 
 //create your first component
 const Layout = () => {
@@ -29,11 +30,17 @@ const Layout = () => {
 						<Route exact path="/persona">
 							<Persona />
 						</Route>
+						<Route exact path="/personaje/:idpersona">
+							<Personaje />
+						</Route>
 						<Route exact path="/planetas">
 							<Planetas />
 						</Route>
 						<Route exact path="/vehiculos">
 							<Vehiculos />
+						</Route>
+						<Route>
+							<h1>404 NOT FOUND!</h1>
 						</Route>
 					</Switch>
 					<Footer />
