@@ -7,7 +7,7 @@ export const Vehiculos = () => {
 
 	return (
 		<>
-			<h1>Planetas</h1>;
+			<h1 className="m-5">Personajes</h1>
 			<div className="row">
 				{store.people.map((cardvehiculos, posicion) => {
 					return <Vehiculos obj={cardvehiculos} key={posicion} />;

@@ -8,17 +8,16 @@ export const Personaje = props => {
 	const { store, actions } = useContext(Context);
 	const { idpersona } = useParams();
 	useEffect(() => {
-		actions.getCharacter(2);
+		actions.getCharacter(idpersona);
 	});
 	console.log(store.people[idpersona - 1]);
 	return (
 		<>
-			<div className="card" style={{ width: "18rem" }}>
+			<div className="card m-3" style={{ width: "18rem" }}>
 				<div className="card-title">
 					{" "}
 					<h2>{store.people[idpersona - 1].name}</h2>
 				</div>
-				<img src="..." className="card-img-top" alt="..." />
 				<div className="card-body">
 					<p className="col">Altura: {store.character.height}</p>
 					<p className="col">Peso: {store.character.mass}</p>
