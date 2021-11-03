@@ -35,8 +35,10 @@ const injectContext = PassedComponent => {
 			//LISTAS!
 			state.actions.getPeople();
 			state.actions.getPlanet();
+			state.actions.getVehiculos();
 
 			//DETALLES!
+			state.actions.vehiculos();
 			state.actions.planet();
 			state.actions.getCharacter();
 		}, []);

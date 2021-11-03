@@ -44,6 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+			
 			// PLANETAS
 			getPlanet: () => {
 				const store = getStore();
@@ -54,6 +55,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
 			// VEHICULOS
 			getVehiculos: () => {
 				const store = getStore();
