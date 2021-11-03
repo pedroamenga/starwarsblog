@@ -14,17 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
-			getCharacter: uid => {
-				const store = getStore();
-				fetch("https://www.swapi.tech/api/people/" + uid)
-					.then(response => response.json())
-					.then(result => {
-						setStore({ character: result.result.properties });
-					})
-					.catch(error => console.log("error", error));
-			},
-
+			//PEOPLE = EL PERSONAJE 
 			getPeople: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/people")
@@ -34,7 +24,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
-
+			//CHARACTER = DETALLES DEL PERSONAJE
+			getCharacter: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/people/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ character: result.result.properties });
+					})
+					.catch(error => console.log("error", error));
+			},
+			//PLEANET = DETALLE DE LOS PLANETAS
 			planet: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/planets/" + uid)
@@ -44,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
-
+			// PLANETAS
 			getPlanet: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/planets")
@@ -54,6 +54,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+			// VEHICULOS
+			getVehiculos: () => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/vehicles")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ vehiculos: result.results})
+					})
+					.catch(error => console.log("error", error));
+			},
+			//DETALLES DE LOS VEHICULOS
+			vehiculos: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/vehicles" + uid)
+					.then(response => response.json())
+					.then(result =>{
+						setStore({vehiculos: result.result.properties })
+					})
+					.catch(error => console.log("error", error));
+			},
+
 			addFavoritos: name => {
 				const store = getStore();
 				setStore({
