@@ -48,6 +48,7 @@ export const Carusel = () => {
 					</Link>
 				</div>
 			</div>
+			
 			<button
 				className="carousel-control-prev"
 				type="button"
