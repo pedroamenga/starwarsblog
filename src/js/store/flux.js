@@ -54,12 +54,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
+			vehiculos: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/vehicles/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ vehiculos: result.result.properties });
+					})
+					.catch(error => console.log("error", error));
+			},
+
+			getVehiculos: () => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/vehicles")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ vehiculos: result.results });
+					})
+					.catch(error => console.log("error", error));
+
+
 			addFavoritos: name => {
 				const store = getStore();
 				setStore({
 					favoritos: [...store.favoritos, name]
 				});
-			},
+			}},
 
 			changeColor: (index, color) => {
 				//get the store
@@ -76,7 +97,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			}
 		}
-	};
-};
+	}};
 
 export default getState;
